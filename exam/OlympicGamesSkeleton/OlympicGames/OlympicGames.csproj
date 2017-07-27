@@ -58,6 +58,9 @@
     <Compile Include="Core\Providers\CommandProcessor.cs" />
     <Compile Include="Core\Engine.cs" />
     <Compile Include="Core\Factories\OlympicsFactory.cs" />
+    <Compile Include="Olympics\Classes\Boxer.cs" />
+    <Compile Include="Olympics\Classes\Olympian.cs" />
+    <Compile Include="Olympics\Classes\Sprinter.cs" />
     <Compile Include="Olympics\Contracts\IOlympian.cs" />
     <Compile Include="Olympics\Contracts\IBoxer.cs" />
     <Compile Include="Olympics\Contracts\ISprinter.cs" />

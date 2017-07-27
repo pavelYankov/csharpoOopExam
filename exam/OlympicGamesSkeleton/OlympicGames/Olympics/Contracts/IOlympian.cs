@@ -5,5 +5,7 @@
         string FirstName { get; }
 
         string LastName { get; }
+
+        string Country { get; }
     }
 }

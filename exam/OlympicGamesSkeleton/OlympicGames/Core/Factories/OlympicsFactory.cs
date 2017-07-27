@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using OlympicGames.Olympics.Classes;
 using OlympicGames.Core.Contracts;
 using OlympicGames.Olympics.Contracts;
 using OlympicGames.Olympics;
@@ -24,14 +24,14 @@ namespace OlympicGames.Core.Factories
 
         public IOlympian CreateBoxer(string firstName, string lastName, string country, string category, int wins, int losses)
         {
-            // TODO: Implement this
-            throw new NotImplementedException();
+            BoxingCategory boxerCategory;
+            Enum.TryParse(category, out boxerCategory);
+            return new Boxer(firstName,lastName,country,boxerCategory,wins,losses);
         }
 
         public IOlympian CreateSprinter(string firstName, string lastName, string country, IDictionary<string, double> records)
         {
-            // TODO: Implement this
-            throw new NotImplementedException();
+            return new Sprinter(firstName,lastName,country,records);
         }
     }
 }

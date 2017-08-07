@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+
 using OlympicGames.Olympics.Classes;
 using OlympicGames.Core.Contracts;
 using OlympicGames.Olympics.Contracts;
@@ -25,6 +26,7 @@ namespace OlympicGames.Core.Factories
         public IOlympian CreateBoxer(string firstName, string lastName, string country, string category, int wins, int losses)
         {
             BoxingCategory boxerCategory;
+            category = char.ToUpper(category[0]) + category.Substring(1);
             Enum.TryParse(category, out boxerCategory);
             return new Boxer(firstName,lastName,country,boxerCategory,wins,losses);
         }

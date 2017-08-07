@@ -15,7 +15,6 @@ namespace OlympicGames.Olympics.Classes
         private string lastName;
         private string country;
 
-
         //constructors
         public Olympian(string firstName, string lastName, string country)
         {
@@ -34,7 +33,7 @@ namespace OlympicGames.Olympics.Classes
             set
             {
                 Validator.ValidateIfNull(value);
-                Validator.ValidateMinAndMaxLength(value, 2, 20);
+                Validator.ValidateMinAndMaxLength(value, 2, 20,"First name must be between 2 and 20 characters long!");
                 this.firstName = value;
             }
         }
@@ -48,7 +47,7 @@ namespace OlympicGames.Olympics.Classes
             set
             {
                 Validator.ValidateIfNull(value);
-                Validator.ValidateMinAndMaxLength(value, 2, 20);
+                Validator.ValidateMinAndMaxLength(value, 2, 20, "Last name must be between 2 and 20 characters long!");
                 this.lastName = value;
             }
         }
@@ -62,15 +61,17 @@ namespace OlympicGames.Olympics.Classes
             set
             {
                 Validator.ValidateIfNull(value);
-                Validator.ValidateMinAndMaxLength(value, 3, 25);
+                Validator.ValidateMinAndMaxLength(value, 3, 25, "Country must be between 3 and 25 characters long!");
                 this.country = value;
             }
         }
 
         //methods
+        //template methods :D ----
         public abstract string GetObjectSpecifics();
-
+        
         public abstract string GetObjectType();
+        //                    ----
 
         public override string ToString()
         {

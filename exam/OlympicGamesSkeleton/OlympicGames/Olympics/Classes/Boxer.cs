@@ -21,7 +21,7 @@ namespace OlympicGames.Olympics.Classes
             string country,
             BoxingCategory category,
             int wins,
-            int loses) : base(firstName, lastName, country)
+            int losses) : base(firstName, lastName, country)
         {
             this.Category = category;
             this.Wins = wins;
@@ -44,7 +44,7 @@ namespace OlympicGames.Olympics.Classes
             private set
             {
                 Validator.ValidateIfNull(value);
-                Validator.ValidateMinAndMaxNumber(value, 0, 100);
+                Validator.ValidateMinAndMaxNumber(value, 0, 100, "Wins must be between 0 and 100!");
                 this.wins = value;
             }
         }
@@ -58,7 +58,7 @@ namespace OlympicGames.Olympics.Classes
             private set
             {
                 Validator.ValidateIfNull(value);
-                Validator.ValidateMinAndMaxNumber(value, 0, 100);
+                Validator.ValidateMinAndMaxNumber(value, 0, 100, "Losses must be between 0 and 100!");
                 this.losses = value;
             }
         }

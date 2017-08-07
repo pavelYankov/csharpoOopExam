@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 using OlympicGames.Olympics.Contracts;
 using OlympicGames.Utils;
 
+
 namespace OlympicGames.Olympics.Classes
 {
     public class Sprinter : Olympian, ISprinter
     {
+        //fields
+
         //constructor
         public Sprinter(string firstName, string lastName, string country, IDictionary<string,double> personalRecorsd ) : base(firstName, lastName, country)
         {
@@ -20,17 +23,25 @@ namespace OlympicGames.Olympics.Classes
         public IDictionary<string, double> PersonalRecords
         {
             get;
-            private set;
+            set;
         }
 
         //methods
         public override string GetObjectSpecifics()
         {
-            return String.Format(@"PERSONAL RECORDS:
-100m: {0}s
-200m: {1}s",
-            this.PersonalRecords["100m"],
-            this.PersonalRecords["200m"]);
+            if (this.PersonalRecords != null)
+            {
+                return String.Format(@"{0}
+100m: {1}s
+200m: {2}s",
+                GlobalConstants.PersonalRecords,
+                this.PersonalRecords["100m"],
+                this.PersonalRecords["200m"]);
+            }
+            else
+            {
+                return GlobalConstants.NoPersonalRecordsSet;
+            }
         }
 
         public override string GetObjectType()
